@@ -143,15 +143,30 @@
     margin-bottom: 20px;
 }
 
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .enquiry-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+    
+    .contact-container, .enquiry-form {
+        width: 100%; /* Ensure full width */
+        text-align: center;
+    }
+}
+
 .map-container {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin: 20px 0px;
+    margin: 20px;
+    padding: 20px;
     flex-wrap: wrap;
 }
 
 .enquiry-form{
+    margin: 20px 0px 0px 0px;
     height: 58vh;
     background-color: black;
     color: white;

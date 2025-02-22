@@ -6,10 +6,6 @@ import "./Contact.css";
 import glassPartitions from "../../assets/videos/clip1.mp4";
 import wallPanels from "../../assets/videos/clip2.mp4";
 import officeInteriors from "../../assets/videos/clip3.mp4";
-// import clip4 from "../../assets/videos/clip4.mp4";
-// import clip5 from "../../assets/videos/clip5.mp4";
-// import clip6 from "../../assets/videos/clip6.mp4";
-// import clip7 from "../../assets/videos/clip7.mp4";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
