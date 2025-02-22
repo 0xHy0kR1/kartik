@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800;1000&family=Quicksand:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.top-box{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 0 !important;
+    padding: 0 !important; 
+    width: 100%;
+    height: 90vh;
+    box-sizing: border-box;
+}
+
+.top-left-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media (max-width: 925px) {
+    .top-box {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .mx-2 {
+      text-align: center; /* Center the text when in column layout */
+      margin-bottom: 20px; /* Add some space between text and image */
+    }
+    .home-top-img {
+      width: 80%;
+      height: 90%;
+    }
+  }
+
+.home-top-img{
+    width: 100%;
+    height: 90%;
+}
+
+
+/* About us section css -- */
+.section-divider {
+    width: 100%;
+    height: 3px;
+    background-color: #157347;  
+    border: none;
+    margin: 40px auto;
+}
+
+.about-us-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 90vh;
+    width: 100%;
+}
+
+.about-text {
+    text-align: left;
+    max-width: 500px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.about-tagline {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #157347;
+    margin-bottom: 15px;
+    
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 10px;
+    /* width: 100%;
+    height: 90%; */
+}
+
+@media (max-width: 992px) {
+    .about-us-section {
+        flex-direction: column; /* Ensures text is on top, image is below */
+        height: auto;
+        text-align: center;
+    }
+    .about-text {
+        order: 1; /* Ensures text appears first */
+    }
+    .about-image {
+        order: 2; /* Ensures image appears below the text */
+        width: 100%;
+        margin-top: 20px;
+    }
+    .about-img {
+        max-width: 80%;
+    }
+}
+
+/* Our Services section */
+.our-services-section{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Our-services-heading{
+    font-weight: bolder;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+.card-section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+.card-box{
+    display: flex;
+    justify-content: center;
+    width: 30%; /* Adjust for better spacing */
+    margin-bottom: 40px; /* Add more space between rows of cards */
+    
+}
+.card {
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease-in-out; 
+    width: 90%;
+    height: 80%;
+    max-width: 400px;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.card-title{
+    font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+}
+
+.card:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a subtle box-shadow on hover */
+}
+[data-theme="light"] .card:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a subtle box-shadow on hover */
+}
+
+[data-theme="dark"] .card:hover{
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Add a subtle box-shadow on hover */
+}
+
+/* Apply the background color based on the theme */
+[data-theme="dark"] .card{
+    background: #17191e;
+    color: white;
+}
+
+[data-theme="light"] .card{
+    background: white;
+    color: black;
+}
+
+.card .card-img-container {
+    height: 70%;
+    overflow: hidden;
+}
+  
+.card .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+[data-theme="dark"] .card1-bottom-button{
+    background-color: white;
+    color: black;
+}
+
+[data-theme="light"] .card1-bottom-button{
+    background-color: black;
+    color: white;
+}
+
+.card1-bottom-button:hover{
+    background-color: #157347;
+    color: white;
+}
+
+/* Testimonial section */
+.testimonial-section{
+    display: flex;
+    flex-direction: column;
+}
+.testimonial-h2{
+    font-weight: bolder;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}

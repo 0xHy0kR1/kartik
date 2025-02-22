@@ -1,0 +1,26 @@
+:root {
+  --body_background: white;
+  --body_color: black;
+  --link_color: navy;
+  --transition-duration: 0.3s;
+}
+
+[data-theme="dark"] {
+  --body_background: #0a1823;
+  --body_color: white;
+  --link_color: cyan;
+}
+
+body {
+  margin: 0;
+  background-color: var(--body_background);
+  color: var(--body_color);
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+    box-sizing: border-box;
+}
+
+#root {
+  background-color: var(--body_background); /* Sync with body */
+  color: var(--body_color);
+  transition: background-color var(--transition-duration);
+}
