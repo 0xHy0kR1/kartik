@@ -82,29 +82,37 @@ const Home = () => {
   };
   return (
     <>
-      <Helmet>
-        <title>Kartik Interiors | Home - Luxury Interior Design</title>
-        <meta name="description" content="Kartik Interiors offers premium modular interiors, false ceilings, wall panels, and home decor. Transform your home with elegance and style." />
-        <meta name="keywords" content="Kartik Interiors, modular interiors, false ceiling, wall panels, home decor, luxury interior design, home renovation" />
-        <meta name="author" content="Kartik Interiors" />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph (Facebook & LinkedIn) */}
-        <meta property="og:title" content="Kartik Interiors | Transform Your Home" />
-        <meta property="og:description" content="We provide stunning modular interiors for your home & office." />
-        <meta property="og:image" content="https://kartikinteriors.com/assets/home-top-right.png" />
-        <meta property="og:url" content="https://kartikinteriors.com/" />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:title" content="Kartik Interiors | Transform Your Home" />
-        <meta name="twitter:description" content="We provide stunning modular interiors for your home & office." />
-        <meta name="twitter:image" content="https://kartikinteriors.com/assets/home-top-right.png" />
-        <meta name="twitter:card" content="summary_large_image" />
+    <Helmet>
+      {/* Basic Metadata */}
+      <title>Kartik Interiors | Home - Luxury Interior Design</title>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="Kartik Interiors offers premium modular interiors, false ceilings, wall panels, and home decor. Transform your home with elegance and style." />
+      <meta name="keywords" content="Kartik Interiors, modular interiors, false ceiling, wall panels, home decor, luxury interior design, home renovation" />
+      <meta name="author" content="Kartik Interiors" />
+      <meta name="robots" content="index, follow" />
 
-        {/* Canonical URL (To avoid duplicate content issues) */}
-        <link rel="canonical" href="https://kartikinteriors.com/" />
-      </Helmet>
+      {/* Favicon */}
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+      {/* Open Graph (Facebook & LinkedIn) */}
+      <meta property="og:title" content="Kartik Interiors | Transform Your Home" />
+      <meta property="og:description" content="We provide stunning modular interiors for your home & office." />
+      <meta property="og:image" content="https://cdn.kartikinteriors15.com/home-top-right.png" />
+      <meta property="og:url" content="https://kartikinteriors15.com/" />
+      <meta property="og:type" content="website" />
+
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:title" content="Kartik Interiors | Transform Your Home" />
+      <meta name="twitter:description" content="We provide stunning modular interiors for your home & office." />
+      <meta name="twitter:image" content="https://cdn.kartikinteriors15.com/home-top-right.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+
+      {/* Canonical URL */}
+      <link rel="canonical" href="https://kartikinteriors15.com/" />
+    </Helmet>
+
     <motion.div
     animate={{ y: [0, -30, 0] }}
   transition={{

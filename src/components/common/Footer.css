@@ -114,3 +114,9 @@
 [data-theme="light"] .footer-links a:hover {
     color: #157347;
 }
+
+.footer-contact-link{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { nanoid } from "nanoid";
 import { useResizeDetector } from "react-resize-detector";
 import FullWidth from "./FullWidth";
+import { Helmet } from "react-helmet-async";
 import "./Reviews.css";
 
 const Height = styled.div`
@@ -117,6 +118,15 @@ const Reviews = () => {
 
   return (
     <FullWidth>
+      <Helmet>
+        <title>Client Reviews | Kartik Interiors</title>
+        <meta
+          name="description"
+          content="Read what our satisfied clients say about Kartik Interiors. High-quality home and office interior design services."
+        />
+        <meta property="og:title" content="Client Reviews | Kartik Interiors" />
+        <meta property="og:description" content="Transform your space with the best in interior design." />
+      </Helmet>
       <Height height={600}>
         <Marquee key={key} velocity={25} scatterRandomly direction={"ltr"} resetAfterTries={0} onInit={() => {}} onFinish={() => {}}>
           {reviewsText.map((review, index) => (

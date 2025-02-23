@@ -174,3 +174,17 @@
     font-size: 1rem;
 }
 
+.submit{
+    display: flex;
+    width: 100%;
+    background: orange;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-link{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}

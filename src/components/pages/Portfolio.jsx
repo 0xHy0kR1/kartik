@@ -12,6 +12,7 @@ import slide7 from "../../assets/slide7.jpg";
 import workSample from "../../assets/work-sample.jpg";
 import { Row, Col, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 // Project Data
 const commercialProjects = [
@@ -105,6 +106,32 @@ const Portfolio = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Portfolio | Kartik Interiors - Commercial & Residential Projects</title>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="Explore our commercial and residential interior design projects. Kartik Interiors brings luxury and elegance to your space." />
+      <meta name="keywords" content="Kartik Interiors, interior design, modular interiors, residential interiors, commercial interiors, home decor" />
+      <meta name="author" content="Kartik Interiors" />
+      <meta name="robots" content="index, follow" />
+
+      {/* Open Graph (Facebook & LinkedIn) */}
+      <meta property="og:title" content="Portfolio | Kartik Interiors - Our Best Projects" />
+      <meta property="og:description" content="Explore our stunning commercial and residential interior designs." />
+      <meta property="og:image" content="https://cdn.kartikinteriors15.com/portfolio-banner.jpg" />
+      <meta property="og:url" content="https://kartikinteriors15.com/portfolio" />
+      <meta property="og:type" content="website" />
+
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:title" content="Portfolio | Kartik Interiors - Our Best Projects" />
+      <meta name="twitter:description" content="Explore our stunning commercial and residential interior designs." />
+      <meta name="twitter:image" content="https://cdn.kartikinteriors15.com/portfolio-banner.jpg" />
+      <meta name="twitter:card" content="summary_large_image" />
+
+      {/* Canonical URL */}
+      <link rel="canonical" href="https://kartikinteriors15.com/portfolio" />
+    </Helmet>
     <div className="portfolio-container">
 {/* Carousel Section */}
 <Carousel className="h-100 carousel-section">
@@ -181,7 +208,7 @@ const Portfolio = () => {
 </div>
 
         <div className="middle-image">
-          <img src={workSample} alt="Work Sample"  className="work-sample-image"/>
+          <img src={workSample} alt="Work_Sample"  className="work-sample-image"/>
         </div>
       </div>
       <hr className="section-divider" />
@@ -256,6 +283,7 @@ const Portfolio = () => {
       </div>
       </div>
     </div>
+    </>
   );
 };
 

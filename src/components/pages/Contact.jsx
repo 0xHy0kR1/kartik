@@ -6,6 +6,7 @@ import "./Contact.css";
 import glassPartitions from "../../assets/videos/clip1.mp4";
 import wallPanels from "../../assets/videos/clip2.mp4";
 import officeInteriors from "../../assets/videos/clip3.mp4";
+import { Helmet } from "react-helmet-async";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -40,6 +41,34 @@ const ContactPage = () => {
 
   return (
     <div className="contact-block">
+      <Helmet>
+        <title>Contact Kartik Interiors - Transform Your Space Today!</title>
+        <meta
+          name="description"
+          content="Get in touch with Kartik Interiors for premium window blinds, wall panels, and modular interiors. Book a free consultation today!"
+        />
+        <meta
+          name="keywords"
+          content="Kartik Interiors, contact, interior design, window blinds, wall panels, modular interiors, home decor"
+        />
+        <meta name="author" content="Kartik Interiors" />
+        
+        {/* Open Graph for Social Media */}
+        <meta property="og:title" content="Contact Kartik Interiors - Transform Your Space Today!" />
+        <meta
+          property="og:description"
+          content="Reach out to Kartik Interiors for the best home decor solutions. Free consultations available!"
+        />
+        <meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg" />
+        <meta property="og:url" content="https://yourwebsite.com/contact" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card for Social Sharing */}
+        <meta name="twitter:title" content="Contact Kartik Interiors" />
+        <meta name="twitter:description" content="Transform your interiors with premium designs. Contact us today!" />
+        <meta name="twitter:image" content="https://yourwebsite.com/path-to-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       {/* Video Carousel Section */}
       <Carousel className="h-100 carousel-section">
         <Carousel.Item className="carousel-item">
@@ -80,7 +109,7 @@ const ContactPage = () => {
         >
           {/* contact section */}
           <div className="contact-container">
-  <h2>Contact Us</h2>
+          <h1>Contact Kartik Interiors</h1>
   <p>
   ✨ Transform Your Space with Unmatched Quality & Style! ✨. Book A Free Consultation
   </p>
@@ -105,22 +134,22 @@ const ContactPage = () => {
     </div>
     <div className="contact-item">
       <FaPhoneAlt className="contact-icon" />
-      <div>
-        <strong>+91 9076115135 | +91 9702237324</strong>
-        <p>Call now to get a special discount</p>
-      </div>
+      <a className="contact-link" href="tel:+919076115135">+91 9076115135</a> |
+      <a className="contact-link" href="tel:+919702237324">+91 9702237324</a>
     </div>
     <div className="contact-item">
       <FaEnvelope className="contact-icon" />
-      <div>
-        <strong>kartikinteriors15@gmail.com</strong>
-      </div>
+      <a className="contact-link" href="mailto:kartikinteriors15@gmail.com">kartikinteriors15@gmail.com</a>
     </div>
   </div>
   <h3>Follow Us</h3>
   <div className="social-icons">
-    <FaGoogle className="social-icon" />
-    <FaFacebook className="social-icon" />
+    <a className="contact-link" href="https://g.page/r/CfO3kJ3QbdUjEAE" target="_blank" rel="noopener noreferrer">
+      <FaGoogle className="social-icon" />
+    </a>
+    <a className="contact-link" href="https://facebook.com/kartikinteriors" target="_blank" rel="noopener noreferrer">
+      <FaFacebook className="social-icon" />
+    </a>
   </div>
 </div>
 
@@ -220,14 +249,7 @@ const ContactPage = () => {
               ></textarea>
               <button
                 type="submit"
-                style={{
-                  display: "block",
-                  width: "100%",
-                  background: "orange",
-                  padding: "10px",
-                  border: "none",
-                  cursor: "pointer",
-                }}
+                className="submit"
               >
                 Send Message
               </button>
@@ -240,13 +262,15 @@ const ContactPage = () => {
        {/* Google Map Section */}
        <div className="map-container">
             <iframe
+            title="Kartik Interiors Location Map"
               src="https://www.google.com/maps?q=21.283744,81.682269&output=embed"
               width="800"
               height="500"
-              allowFullScreen=""
+              allowFullScreen
               loading="lazy"
             ></iframe>
         </div>
+        
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 function NavbarComponent(props) {
   // State to manage modal visibility
@@ -91,7 +92,13 @@ function NavbarComponent(props) {
 
   return (
     <>
+    <Helmet>
+        <title>Navigation | Kartik Interiors</title>
+        <meta name="description" content="Navigate through Kartik Interiors for premium interior design solutions. Explore our portfolio and contact us today." />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <button
+      aria-label="Toggle Navigation Menu"
         variant="primary"
         className={`btn-primary burger-button ${
           isToggled ? "black-bg" : "white-bg"
