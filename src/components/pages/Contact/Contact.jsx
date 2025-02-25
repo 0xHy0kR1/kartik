@@ -14,7 +14,10 @@ import {
 import glassPartitions from "../../../assets/videos/clip1.mp4";
 import wallPanels from "../../../assets/videos/clip2.mp4";
 import officeInteriors from "../../../assets/videos/clip3.mp4";
+import livingRoomInteriors from "../../../assets/videos/clip4.mp4";
+import bathroomInteriors from "../../../assets/videos/clip5.mp4";
 import "./Contact.css";
+import ScrollToTop from "react-scroll-to-top";
 
 const ContactPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -33,6 +36,7 @@ const ContactPage = () => {
   }, []);
 
   return (
+    <>
     <div className="contact-block">
       <Helmet>
         <title>Contact Kartik Interiors - Transform Your Space Today!</title>
@@ -89,6 +93,24 @@ const ContactPage = () => {
           <Carousel.Caption>
             <h3>Premium Office Interiors for Productivity</h3>
             <p>Transform your workspace with sleek and functional designs.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <video className="d-block w-100" autoPlay loop muted>
+            <source src={livingRoomInteriors} type="video/mp4" />
+          </video>
+          <Carousel.Caption>
+            <h3>Elegant Living Room Interiors for Style & Comfort</h3>
+            <p>Enhance your living space with modern and cozy interiors.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <video className="d-block w-100" autoPlay loop muted>
+            <source src={bathroomInteriors} type="video/mp4" />
+          </video>
+          <Carousel.Caption>
+            <h3>Luxurious Bathroom Interiors for Relaxation</h3>
+            <p>Experience comfort and elegance with our premium bathroom designs.</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -265,6 +287,12 @@ const ContactPage = () => {
         </div>
         
     </div>
+    <ScrollToTop
+    smooth
+    viewBox="0 0 24 24"
+    svgPath="M9 19c-4.286 1.35-4.286-2.55-6-3m12 5v-3.5c0-1 .099-1.405-.5-2 2.791-.3 5.5-1.366 5.5-6.04a4.567 4.567 0 0 0 -1.333 -3.21 4.192 4.192 0 00-.08-3.227s-1.05-.3-3.476 1.267a12.334 12.334 0 0 0 -6.222 0C6.462 2.723 5.413 3.023 5.413 3.023a4.192 4.192 0 0 0 -.08 3.227A4.566 4.566 0 004 9.486c0 4.64 2.709 5.68 5.5 6.014-.591.589-.56 1.183-.5 2V21"
+  />
+    </>
   );
 };
 

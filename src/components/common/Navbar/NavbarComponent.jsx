@@ -153,6 +153,15 @@ function NavbarComponent(props) {
                         Contact
                       </Link>
                     </motion.div>
+                    <motion.div className="block-link" variants={navItem}>
+                      <Link
+                        to="/about"
+                        className="nav-link"
+                        onClick={closeBurgerMenu}
+                      >
+                        About Us
+                      </Link>
+                    </motion.div>
                   </div>
                 </motion.div>
               </Container>

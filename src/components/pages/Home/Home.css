@@ -31,8 +31,8 @@
     }
   
     .mx-2 {
-      text-align: center; /* Center the text when in column layout */
-      margin-bottom: 20px; /* Add some space between text and image */
+      text-align: center;
+      margin-bottom: 20px;
     }
     .home-top-img {
       width: 80%;
@@ -106,15 +106,15 @@
 
 @media (max-width: 992px) {
     .about-us-section {
-        flex-direction: column; /* Ensures text is on top, image is below */
+        flex-direction: column; 
         height: auto;
         text-align: center;
     }
     .about-text {
-        order: 1; /* Ensures text appears first */
+        order: 1;
     }
     .about-image {
-        order: 2; /* Ensures image appears below the text */
+        order: 2;
         width: 100%;
         margin-top: 20px;
     }
@@ -146,8 +146,8 @@
 .card-box{
     display: flex;
     justify-content: center;
-    width: 30%; /* Adjust for better spacing */
-    margin-bottom: 40px; /* Add more space between rows of cards */
+    width: 30%;
+    margin-bottom: 40px; 
     
 }
 .card {
@@ -166,14 +166,14 @@
 }
 
 .card:hover{
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a subtle box-shadow on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
 }
 [data-theme="light"] .card:hover{
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a subtle box-shadow on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] .card:hover{
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Add a subtle box-shadow on hover */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); 
 }
 
 /* Apply the background color based on the theme */
@@ -195,7 +195,7 @@
 .card .card-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the container */
+    object-fit: cover; 
 }
 
 [data-theme="dark"] .card1-bottom-button{
@@ -223,11 +223,3 @@
     font-family: 'Nunito', sans-serif;
     text-align: center;
 }
-
-/* Add this to your Home.css or a global CSS file */
-.react-scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; /* Ensure it's above other elements */
-  }

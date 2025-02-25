@@ -11,11 +11,18 @@ import Footer from "./components/common/Footer/Footer";
 import Portfolio from "./components/pages/Portfolio/Portfolio";
 import Contact from "./components/pages/Contact/Contact";
 import { HelmetProvider, Helmet } from "react-helmet-async";
+import About from "./components/pages/About/About";
+import NotFound from "./components/pages/404/display"
 
 function App() {
   const [burgerClicked, setBurgerClicked] = useState(false);
 
   const location = useLocation();
+
+  const validRoutes = ["/", "/portfolio", "/about", "/contact"];
+  const showNavbarAndFooter = validRoutes.includes(location.pathname);
+  console.log("showNavbarAndFooter", showNavbarAndFooter)
+
   const handleBurgerClick = () => {
     setBurgerClicked(!burgerClicked);
   };
@@ -67,11 +74,13 @@ function App() {
         stiffness: 100 
       }}
         >
-            <NavbarComponent
-              burgerClicked={burgerClicked}
-              closeBurgerMenu={closeBurgerMenu}
-              handleBurgerClick={handleBurgerClick}
-            />
+      {showNavbarAndFooter && (
+        <NavbarComponent
+          burgerClicked={burgerClicked}
+          closeBurgerMenu={closeBurgerMenu}
+          handleBurgerClick={handleBurgerClick}
+        />
+      )}
           {!burgerClicked && (
             <>
               {/* <Alert alert={alert} /> */}
@@ -80,13 +89,16 @@ function App() {
                 <Routes location={location} key={location.pathname}>
                   <Route path="/" element={<Home />} />
                   <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/about" element={<About />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
                 </AnimatePresence>
             </>
 
           )}
-          <Footer />
+          {/* Show Navbar only if not on 404 */}
+          {showNavbarAndFooter && <Footer />}
         </motion.div>  
       </HelmetProvider>    
   );
