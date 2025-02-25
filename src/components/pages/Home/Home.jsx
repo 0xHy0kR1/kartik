@@ -1,14 +1,17 @@
-import { React, useState } from "react";
+import { React, useState, lazy, Suspense } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import home_top_right from "./../../assets/images/home-top-right.webp";
-import home_about_right from "./../../assets/images/home-about.webp";
+import home_top_right from "./../../../assets/images/home-top-right.webp";
+import home_about_right from "./../../../assets/images/home-about.webp";
 import "./Home.css";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import VideoModal from "../modal/VideoModal"; // Import the VideoModal component
-import Reviews from "./Reviews/Reviews";
 import { withSize } from "react-sizeme";
 import { Helmet } from "react-helmet-async";
+import Spinner from "../../common/Spinner";
+import ScrollToTop from "react-scroll-to-top";
+// Lazy load components
+const VideoModal = lazy(() => import("../../modal/VideoModal"));
+const Reviews = lazy(() => import("../Reviews/Reviews"));
 
 // Dynamically import all images from the assets folder
 const importAll = (r) => {
@@ -21,32 +24,31 @@ const importAll = (r) => {
 
 // Import all images from the assets folder
 const images = importAll(
-  require.context("./../../assets/images", false, /\.(png|jpe?g|svg|webp)$/)
+  require.context("./../../../assets/images", false, /\.(png|jpe?g|svg|webp)$/)
 );
 
-const serviceVideos = {
-  windowBlinds: require("../../assets/videos/window-blinds.mp4"),
-  modularKitchen: require("../../assets/videos/modular-kitchen.mp4"),
-  modularFalseCeiling: require("../../assets/videos/modular-false-ceiling.mp4"),
-  wallPanels: require("../../assets/videos/wall-panels.mp4"),
-  wardrobes: require("../../assets/videos/wardrobes.mp4"),
-  glassPartitions: require("../../assets/videos/glass-partitions.mp4"),
-  flooring: require("../../assets/videos/flooring.mp4"),
-  wallpapers: require("../../assets/videos/wallpapers.mp4"),
-  mosquitoNet: require("../../assets/videos/mosquito-net.mp4"),
-  bathroomInteriors: require("../../assets/videos/bathroom-interiors.mp4"),
-  officeInteriors: require("../../assets/videos/office-interiors.mp4"),
-  bedroomInteriors: require("../../assets/videos/bedroom-interiors.mp4"),
-  livingRoom: require("../../assets/videos/living-room.mp4"),
-  outdoorShades: require("../../assets/videos/outdoor-shades.mp4"),
-};
 
-const services = Object.keys(serviceVideos).map((key) => ({
-  title: key
-    .replace(/([A-Z])/g, " $1")
-    .replace(/^./, (str) => str.toUpperCase()),
-  video: serviceVideos[key],
+const services = [
+  "window-blinds",
+  "modular-kitchen",
+  "modular-false-ceiling",
+  "wall-panels",
+  "wardrobes",
+  "glass-partitions",
+  "flooring",
+  "wallpapers",
+  "mosquito-net",
+  "bathroom-interiors",
+  "office-interiors",
+  "bedroom-interiors",
+  "living-room",
+  "outdoor-shades",
+].map((title) => ({
+  title: title.replace(/-/g, " ").replace(/^./, (str) => str.toUpperCase()),
+  video: `${title}.mp4`,
 }));
+
+
 
 const Home = () => {
   // Check if the user is logged in (based on the presence of authToken)
@@ -71,8 +73,9 @@ const Home = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [selectedVideoTitle, setSelectedVideoTitle] = useState(""); // Store video title
 
-  const openVideo = (video, title) => {
-    setSelectedVideo(video);
+  const openVideo = async (video, title) => {
+    const videoModule = await import(`../../../assets/videos/${video}`);
+    setSelectedVideo(videoModule.default);
     setSelectedVideoTitle(title); // Set the title of the selected video
   };
 
@@ -99,14 +102,14 @@ const Home = () => {
       {/* Open Graph (Facebook & LinkedIn) */}
       <meta property="og:title" content="Kartik Interiors | Transform Your Home" />
       <meta property="og:description" content="We provide stunning modular interiors for your home & office." />
-      <meta property="og:image" content="https://cdn.kartikinteriors15.com/home-top-right.webp" />
+      <meta property="og:image" content="https://i.postimg.cc/T38TrJxk/linkedin.webp" />
       <meta property="og:url" content="https://kartikinteriors15.com/" />
       <meta property="og:type" content="website" />
 
       {/* Twitter Meta Tags */}
       <meta name="twitter:title" content="Kartik Interiors | Transform Your Home" />
       <meta name="twitter:description" content="We provide stunning modular interiors for your home & office." />
-      <meta name="twitter:image" content="https://cdn.kartikinteriors15.com/home-top-right.webp" />
+      <meta name="twitter:image" content="https://i.postimg.cc/mDTD7NYx/twitter.webp" />
       <meta name="twitter:card" content="summary_large_image" />
 
       {/* Canonical URL */}
@@ -125,7 +128,7 @@ const Home = () => {
   }}
     >
       <Container fluid>
-        <Row className="top-box">
+        <section className="top-box">
           <Col className="mx-2 top-left-text">
             <TypeAnimation
               sequence={[
@@ -159,9 +162,10 @@ const Home = () => {
               src={home_top_right}
               alt="Luxury Modular Interiors by Kartik Interiors"
               className="home-top-img"
+              loading="lazy"
             />
           </Col>
-        </Row>
+        </section>
           {/* About Us Section */}
           <hr className="section-divider" />
           <Row className="about-us-section">
@@ -181,11 +185,12 @@ const Home = () => {
                 something amazing together! 🎨💫
               </p>
             </Col>
-            <Col md={6} className="about-img">
-              <images
+            <Col md={6} className="about-image">
+              <img
                 src={home_about_right}
                 alt="About Us"
                 className="about-img"
+                loading="lazy"
               />
             </Col>
           </Row>
@@ -210,10 +215,11 @@ const Home = () => {
                       onClick={() => openVideo(service.video, service.title)}
                     >
                       <Card.Img
-                        className="card-images-container"
+                        className="card-img-container"
                         variant="top"
                         src={imageSrc}
                         alt={service.title}
+                        loading="lazy"
                       />
                       <Card.Body>
                         <Card.Title>{service.title}</Card.Title>
@@ -240,15 +246,24 @@ const Home = () => {
           <Col>
             <h2 className="testimonial-h2">What Our Customers Say?</h2>
           </Col>
-          <Reviews />
+          <Suspense fallback={<Spinner/>}>
+            <Reviews />
+          </Suspense>
         </Row>
-      </Container>
-      <VideoModal
-        show={!!selectedVideo}
-        handleClose={closeVideo}
-        videoSrc={selectedVideo}
-        videoTitle={selectedVideoTitle} // Pass the title to modal
+        <ScrollToTop
+        smooth
+        viewBox="0 0 24 24"
+        svgPath="M9 19c-4.286 1.35-4.286-2.55-6-3m12 5v-3.5c0-1 .099-1.405-.5-2 2.791-.3 5.5-1.366 5.5-6.04a4.567 4.567 0 0 0 -1.333 -3.21 4.192 4.192 0 00-.08-3.227s-1.05-.3-3.476 1.267a12.334 12.334 0 0 0 -6.222 0C6.462 2.723 5.413 3.023 5.413 3.023a4.192 4.192 0 0 0 -.08 3.227A4.566 4.566 0 004 9.486c0 4.64 2.709 5.68 5.5 6.014-.591.589-.56 1.183-.5 2V21"
       />
+      </Container>
+      <Suspense fallback={<Spinner/>}>
+        <VideoModal
+          show={!!selectedVideo}
+          handleClose={closeVideo}
+          videoSrc={selectedVideo}
+          videoTitle={selectedVideoTitle} // Pass the title to modal
+        />
+      </Suspense>
     </motion.div>
     </>
   );

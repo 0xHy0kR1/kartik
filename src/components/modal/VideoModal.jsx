@@ -74,7 +74,7 @@ const VideoModal = ({ show, handleClose, videoSrc, videoTitle }) => {
       </Modal.Header>
       <Modal.Body className="video-modal-body">
         {videoSrc ? (
-          <video id="modal-video" controls autoPlay>
+          <video id="modal-video" controls autoPlay preload="metadata">
             <source src={videoSrc} type="video/mp4" />
             Your browser does not support the video tag.
           </video>

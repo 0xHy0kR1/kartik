@@ -15,7 +15,7 @@
     margin: 0 !important;
     padding: 0 !important; 
     width: 100%;
-    height: 90vh;
+    height: 100%;
     box-sizing: border-box;
 }
 
@@ -61,7 +61,7 @@
     justify-content: space-between;
     margin: 0 !important;
     padding: 0 !important;
-    height: 90vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -223,3 +223,11 @@
     font-family: 'Nunito', sans-serif;
     text-align: center;
 }
+
+/* Add this to your Home.css or a global CSS file */
+.react-scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+  }

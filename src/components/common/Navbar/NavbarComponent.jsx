@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "./NavbarComponent.css";
-import DarkMode from "./DarkMode/DarkMode";
+import DarkMode from "../DarkMode/DarkMode";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { Link } from "react-router-dom";

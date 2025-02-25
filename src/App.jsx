@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Routes, Route, useLocation} from "react-router-dom";
-import NavbarComponent from "./components/common/NavbarComponent"; // Correct import path
-import Home from "./components/pages/Home";
+import NavbarComponent from "./components/common/Navbar/NavbarComponent"; // Correct import path
+import Home from "./components/pages/Home/Home";
 import "./index.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion, AnimatePresence } from "framer-motion";
-import Footer from "./components/common/Footer";
-import Portfolio from "./components/pages/Portfolio";
-import Contact from "./components/pages/Contact";
+import Footer from "./components/common/Footer/Footer";
+import Portfolio from "./components/pages/Portfolio/Portfolio";
+import Contact from "./components/pages/Contact/Contact";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 
 function App() {

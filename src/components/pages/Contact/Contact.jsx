@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import emailjs from "emailjs-com";
-import "./Contact.css";
-import glassPartitions from "../../assets/videos/clip1.mp4";
-import wallPanels from "../../assets/videos/clip2.mp4";
-import officeInteriors from "../../assets/videos/clip3.mp4";
 import { Helmet } from "react-helmet-async";
 import {
   FaMapMarkerAlt,
@@ -15,29 +11,26 @@ import {
   FaGoogle,
   FaFacebook,
 } from "react-icons/fa";
+import glassPartitions from "../../../assets/videos/clip1.mp4";
+import wallPanels from "../../../assets/videos/clip2.mp4";
+import officeInteriors from "../../../assets/videos/clip3.mp4";
+import "./Contact.css";
 
 const ContactPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
-    emailjs.sendForm(
-      process.env.REACT_APP_SERVICE_ID,
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
         e.target,
         process.env.REACT_APP_PUBLIC_KEY
-    )
-    .then((result) => {
-      console.log("Email sent successfully:", result.text);
-      setIsSubmitted(true);
-    })
-    .catch((error) => {
-      console.error("Email sending failed:", error.text);
-    });
-
-    setIsSubmitted(true);
-  };
+      )
+      .then(() => setIsSubmitted(true))
+      .catch((error) => console.error("Email sending failed:", error.text));
+  }, []);
 
   return (
     <div className="contact-block">
@@ -59,14 +52,14 @@ const ContactPage = () => {
           property="og:description"
           content="Reach out to Kartik Interiors for the best home decor solutions. Free consultations available!"
         />
-        <meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg" />
-        <meta property="og:url" content="https://yourwebsite.com/contact" />
+        <meta property="og:image" content="https://i.postimg.cc/kXHBLSm8/images.webp" />
+        <meta property="og:url" content="https://kartikinteriors15.com/contact" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card for Social Sharing */}
         <meta name="twitter:title" content="Contact Kartik Interiors" />
         <meta name="twitter:description" content="Transform your interiors with premium designs. Contact us today!" />
-        <meta name="twitter:image" content="https://yourwebsite.com/path-to-image.jpg" />
+        <meta name="twitter:image" content="https://i.postimg.cc/mDTD7NYx/twitter.webp" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       {/* Video Carousel Section */}
