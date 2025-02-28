@@ -1,4 +1,4 @@
-import { React, useState, lazy, Suspense } from "react";
+import { React, useState, useEffect, lazy, Suspense } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import home_top_right from "./../../../assets/images/home-top-right.webp";
 import home_about_right from "./../../../assets/images/home-about.webp";
@@ -84,6 +84,21 @@ const Home = () => {
     setSelectedVideo(null);
     setSelectedVideoTitle(""); // Reset title when modal closes
   };
+
+  const [fontSize, setFontSize] = useState(window.innerWidth <= 768 ? "1.6em" : "2em");
+
+useEffect(() => {
+  const handleResize = () => {
+    setFontSize(window.innerWidth <= 768 ? "1.3em" : "2em");
+  };
+  
+  window.addEventListener("resize", handleResize);
+  
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
+
   return (
     <>
     <Helmet>
@@ -146,7 +161,11 @@ const Home = () => {
               ]}
               wrapper="span"
               speed={50}
-              style={{ fontSize: "2em", display: "inline-block" }}
+              style={{
+                fontSize: fontSize,
+                display: "inline-block",
+                fontWeight: "bold",
+              }}
               repeat={Infinity}
             />
 
@@ -251,8 +270,8 @@ const Home = () => {
             <Reviews />
           </Suspense>
         </Row>
-        <FloatingWhatsAppButton />
       </Container>
+      <FloatingWhatsAppButton />
       <ScrollToTop
         smooth
         viewBox="0 0 24 24"

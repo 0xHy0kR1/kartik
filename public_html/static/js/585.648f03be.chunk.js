@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[585],{9585:(e,a,p)=>{e.exports=p.p+"static/media/wallpapers.a9c92d7ceac2761f6735.mp4"}}]);

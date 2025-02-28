@@ -172,7 +172,7 @@ function NavbarComponent(props) {
       {/* DarkMode component */}
       <div className="right-block">
         <div className="button-block">
-        <Button variant="danger" className="call-now-button" onClick={() => window.location.href = "tel:+919876543210"}>
+        <Button variant="danger" className="call-now-button" onClick={() => window.location.href = "tel:+919424200676"}>
             Call Now
           </Button>
         </div>

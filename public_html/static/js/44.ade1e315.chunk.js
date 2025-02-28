@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[44],{1271:(e,f,s)=>{e.exports=s.p+"static/media/modular-false-ceiling.f5f7274e75134f8b3fcc.mp4"}}]);

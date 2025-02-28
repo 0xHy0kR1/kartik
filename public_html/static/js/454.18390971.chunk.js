@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[454],{1454:(e,s,t)=>{e.exports=t.p+"static/media/glass-partitions.d8612e4a77c0a099345b.mp4"}}]);

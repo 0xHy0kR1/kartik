@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[756],{3756:(e,t,d)=>{e.exports=d.p+"static/media/modular-kitchen.239d9cd8fd47281a9437.mp4"}}]);

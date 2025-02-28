@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[978],{8978:(e,t,s)=>{e.exports=s.p+"static/media/mosquito-net.c90be8890234d25eff7a.mp4"}}]);

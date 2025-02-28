@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Card, CardContent, Grid, Typography, Table, TableBody, TableCell, TableContainer, TableRow, Paper } from "@mui/material";
+import { Card, CardContent, Box, Typography, Table, TableBody, TableCell, TableContainer, TableRow, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 import about_img from "../../../assets/images/about_page.webp"
 // Animated Counter Component
@@ -38,6 +38,12 @@ const AnimatedCounter = ({ value }) => {
 
   return <Typography variant="h3" fontWeight="bold">{count.toLocaleString()}+</Typography>;
 };
+const items = [
+  { label: "Satisfied Clients", value: 150 },
+  { label: "Years of Experience", value: 10 },
+  { label: "Completed Projects", value: 1000 },
+];
+
 
 export default function About() {
   return (
@@ -132,22 +138,34 @@ export default function About() {
       <Typography variant="h2"  style={{ marginTop: "50px" , textAlign: "center", fontSize: "2rem", fontFamily: ""}} fontWeight="bold" gutterBottom>
         Numbers Speak for Themselves
       </Typography>
-      <Grid container spacing={4} justifyContent="center">
-        {[
-          { label: "Satisfied Clients", value: 150 },
-          { label: "Years of Experience", value: 10 },
-          { label: "Completed Projects", value: 1000 },
-        ].map((item, index) => (
-          <Grid item key={index} xs={12} sm={4}>
-            <Card elevation={3} sx={{ padding: "20px", textAlign: "center" }}>
-              <CardContent>
-                <AnimatedCounter value={item.value} />
-                <Typography variant="h6">{item.label}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      
+      <Box display="flex" flexWrap="wrap" justifyContent="center" sx={{
+    gap: { xs: 2, sm: 10, md: 20 } // Gap is 2 on mobile, 10 on tablets, and 20 on desktop
+  }}>
+  {items.map((item, index) => (
+    <Card elevation={6} key={index} sx={{
+      padding: "20px",
+      textAlign: "center",
+      minWidth: "240px",
+      borderRadius: "10px",
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // 3D shadow effect
+      transition: "transform 0.2s",
+      "&:hover": {
+        transform: "scale(1.05)", // Slight zoom effect on hover
+      },
+    }}>
+      <CardContent>
+        <AnimatedCounter  sx={{
+            fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" } // Smaller text on mobile
+          }} value={item.value} />
+        <Typography  sx={{
+            fontSize: { xs: "1.2rem", sm: "1.5rem", md: "1.2rem" } // Smaller text on mobile
+          }} variant="h6">{item.label}</Typography>
+      </CardContent>
+    </Card>
+  ))}
+</Box>
+
 
       {/* Firm Introduction Table */}
       <Typography variant="h3" fontWeight="bold" style={{ marginTop: "50px" , textAlign: "center", fontSize: "2rem"}}>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[738],{8738:(e,n,s)=>{e.exports=s.p+"static/media/living-room.747965a7ce6869ffb1ad.mp4"}}]);

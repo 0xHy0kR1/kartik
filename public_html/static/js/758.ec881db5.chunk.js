@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[758],{3758:(e,c,s)=>{e.exports=s.p+"static/media/wall-panels.c6945cfc25cdb68867a6.mp4"}}]);

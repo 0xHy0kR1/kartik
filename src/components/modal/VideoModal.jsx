@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import "./VideoModal.css";
+import { BsFullscreen } from "react-icons/bs";
 
 const VideoModal = ({ show, handleClose, videoSrc, videoTitle }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+    };
+
+    handleResize(); // Check on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => setShowDropdown(!showDropdown);
@@ -17,7 +30,7 @@ const VideoModal = ({ show, handleClose, videoSrc, videoTitle }) => {
     let shareUrl = "";
     switch (platform) {
       case "meta":
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`;
         break;
       case "twitter":
         shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}`;
@@ -56,7 +69,7 @@ const VideoModal = ({ show, handleClose, videoSrc, videoTitle }) => {
       <Modal.Title className="video-title">{videoTitle || "Video Sample"}</Modal.Title>
         <div className="video-modal-controls">
           <DropdownButton
-            title="📤 Share"
+            title="📤"
             show={showDropdown}
             onToggle={toggleDropdown}
             className="share-dropdown"
@@ -68,7 +81,15 @@ const VideoModal = ({ show, handleClose, videoSrc, videoTitle }) => {
             <Dropdown.Divider />
             <Dropdown.Item onClick={handleDownload}>⬇️ Download Video</Dropdown.Item>
           </DropdownButton>
-          <Button variant="light" onClick={handleFullscreen}>⛶ Fullscreen</Button>
+           {isMobile ? (
+            <Button variant="light" onClick={handleFullscreen} className="fullscreen-btn">
+              <BsFullscreen size={24} />
+            </Button>
+          ) : (
+            <Button variant="dark" onClick={handleFullscreen} className="fullscreen-btn">
+              🔲 Full Screen
+            </Button>
+          )}
           <Button variant="danger" onClick={handleClose}>✖</Button>
         </div>
       </Modal.Header>

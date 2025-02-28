@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[341],{341:(e,s,t)=>{e.exports=t.p+"static/media/bedroom-interiors.91f3bc522bc5b8e234a6.mp4"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[745],{6745:(e,n,s)=>{e.exports=s.p+"static/media/window-blinds.7c2cae8194e3a6201972.mp4"}}]);

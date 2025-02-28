@@ -8,8 +8,8 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaClock,
-  FaGoogle,
   FaFacebook,
+  FaTwitter,
 } from "react-icons/fa";
 import glassPartitions from "../../../assets/videos/clip1.mp4";
 import wallPanels from "../../../assets/videos/clip2.mp4";
@@ -149,20 +149,20 @@ const ContactPage = () => {
     </div>
     <div className="contact-item">
       <FaPhoneAlt className="contact-icon" />
-      <a className="contact-link" href="tel:+919076115135">+91 9076115135</a> |
-      <a className="contact-link" href="tel:+919702237324">+91 9702237324</a>
+      <a className="contact-link" href="tel:+919424200676">+91 9424200676</a>
     </div>
     <div className="contact-item">
       <FaEnvelope className="contact-icon" />
-      <a className="contact-link" href="mailto:kartikinteriors15@gmail.com">kartikinteriors15@gmail.com</a>
+      <a className="contact-link" href="mailto:sales@kartikinteriors15.com.com">sales@kartikinteriors15.com </a>
     </div>
   </div>
   <h3>Follow Us</h3>
   <div className="social-icons">
-    <a className="contact-link" href="https://g.page/r/CfO3kJ3QbdUjEAE" target="_blank" rel="noopener noreferrer">
-      <FaGoogle className="social-icon" />
+    <a className="contact-link" href="https://x.com/Kar1ikSales" target="_blank" rel="noopener noreferrer">
+      <FaTwitter className="social-icon" />
+      {/* https://x.com/Kar1ikSales */}
     </a>
-    <a className="contact-link" href="https://facebook.com/kartikinteriors" target="_blank" rel="noopener noreferrer">
+    <a className="contact-link" href="https://www.facebook.com/profile.php?id=61573224883339" target="_blank" rel="noopener noreferrer">
       <FaFacebook className="social-icon" />
     </a>
   </div>

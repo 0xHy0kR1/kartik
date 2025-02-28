@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[471],{4471:(e,s,d)=>{e.exports=d.p+"static/media/wardrobes.fde40ebcd50b3fee056d.mp4"}}]);

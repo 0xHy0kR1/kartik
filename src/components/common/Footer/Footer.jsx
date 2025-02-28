@@ -29,24 +29,20 @@ const Footer = () => {
             <FaMapMarkerAlt /> SA 17, 2nd Floor, Lake City Mall, Thane West - 400607
           </p>
           <p>
-            <FaPhone /> <a className="footer-contact-link" href="tel:+919076115135" aria-label="Call Kartik Interiors">9076115135</a> /
-            <a className="footer-contact-link" href="tel:+919702237324" aria-label="Call Kartik Interiors">9702237324</a>
+            <FaPhone /> <a className="footer-contact-link" href="tel:+919424200676" aria-label="Call Kartik Interiors">9424200676</a>
           </p>
           <p>
-            <FaEnvelope /> <a className="footer-contact-link" href="mailto:kartikinteriors15@gmail.com" aria-label="Email Kartik Interiors">kartikinteriors15@gmail.com</a>
+            <FaEnvelope /> <a className="footer-contact-link" href="mailto: sales@kartikinteriors15.com" aria-label="Email Kartik Interiors">sales@kartikinteriors15.com</a>
           </p>
         </div>
         <div className="footer-section footer-social">
           <h3 className="footer-heading">Follow Us</h3>
           <div className="footer-social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61573224883339" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
               <FaFacebook />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+            <a href="https://www.instagram.com/interiorskartik/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
               <FaInstagram />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
-              <FaLinkedin />
             </a>
           </div>
         </div>

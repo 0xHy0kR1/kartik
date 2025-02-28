@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[1],{6001:(e,s,t)=>{e.exports=t.p+"static/media/outdoor-shades.8822cedb7e108e7f1e37.mp4"}}]);
