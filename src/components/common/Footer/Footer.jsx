@@ -9,6 +9,7 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
+import FloatingWhatsAppButton from "../FloatingWhatsAppButton"
 
 const Footer = () => {
   return (
@@ -48,7 +49,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; {new Date().getFullYear()} Kartik Interiors. All rights reserved.
+        <div className="footer-copy">
+          &copy; {new Date().getFullYear()} Kartik Interiors. All rights reserved.
+        </div>
+        <div className="footer-whatsapp-floating">
+          <FloatingWhatsAppButton />
+        </div>
       </div>
     </footer>
   );

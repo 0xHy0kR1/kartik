@@ -131,9 +131,9 @@ const Reviews = () => {
         </script>
       </Helmet>
       <Height height={600}>
-        <Marquee key={key} velocity={25} scatterRandomly direction={"ltr"}>
+        <Marquee key={key} velocity={25} scatterRandomly direction={"ltr"} resetAfterTries={100}>
           {reviewsText.map((review, index) => (
-            <Box key={`review-${index}`} scale={scale}>
+            <Box key={`review-${index}`} scale={scale} style={{ animationDelay: `${index * 0.5}s`}}>
               <Review scale={scale}>
                 <Avatar scale={scale}>
                   <img src={portraits[index]} alt={`Avatar of ${reviewerNames[index]}`} loading="lazy" />

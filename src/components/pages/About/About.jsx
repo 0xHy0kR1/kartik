@@ -13,6 +13,7 @@ import livingRoomInteriors from "../../../assets/videos/clip4.mp4";
 import bathroomInteriors from "../../../assets/videos/clip5.mp4";
 import { Carousel } from "react-bootstrap";
 import ScrollToTop from "react-scroll-to-top";
+import ogAbout from "../../../assets/images/ogAbout.webp"
 const AnimatedCounter = ({ value }) => {
   const [count, setCount] = useState(0);
 
@@ -54,7 +55,7 @@ export default function About() {
         <meta name="keywords" content="Interior Design, Window Blinds, Home Interiors, Kartik Interiors, Best Interior Design Firm" />
         <meta property="og:title" content="About Kartik Interiors - Best Interior Design & Window Blinds" />
         <meta property="og:description" content="Kartik Interiors specializes in elegant and functional interior designs. Our expert designers bring your dream spaces to life!" />
-        <meta property="og:image" content={about_img} />
+        <meta property="og:image" content={ogAbout} />
         <meta property="og:type" content="website" />
       </Helmet>
       <Typography variant="h1"  style={{ marginTop: "50px" , textAlign: "center", fontSize: "2.5rem"}} fontWeight="bold" gutterBottom>

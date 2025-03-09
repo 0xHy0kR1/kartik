@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet-async";
 import Spinner from "../../common/Spinner";
 import ScrollToTop from "react-scroll-to-top";
 import FloatingWhatsAppButton from "../../common/FloatingWhatsAppButton";
+import ogHome from "../../../assets/images/kartik_interiors_logo.webp"
 // Lazy load components
 const VideoModal = lazy(() => import("../../modal/VideoModal"));
 const Reviews = lazy(() => import("../Reviews/Reviews"));
@@ -118,7 +119,7 @@ useEffect(() => {
       {/* Open Graph (Facebook & LinkedIn) */}
       <meta property="og:title" content="Kartik Interiors | Transform Your Home" />
       <meta property="og:description" content="We provide stunning modular interiors for your home & office." />
-      <meta property="og:image" content="https://i.postimg.cc/T38TrJxk/linkedin.webp" />
+      <meta property="og:image" content={ogHome} />
       <meta property="og:url" content="https://kartikinteriors15.com/" />
       <meta property="og:type" content="website" />
 
@@ -271,7 +272,6 @@ useEffect(() => {
           </Suspense>
         </Row>
       </Container>
-      <FloatingWhatsAppButton />
       <ScrollToTop
         smooth
         viewBox="0 0 24 24"
@@ -282,7 +282,7 @@ useEffect(() => {
           show={!!selectedVideo}
           handleClose={closeVideo}
           videoSrc={selectedVideo}
-          videoTitle={selectedVideoTitle} // Pass the title to modal
+          videoTitle={selectedVideoTitle}
         />
       </Suspense>
     </motion.div>

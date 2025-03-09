@@ -25,14 +25,25 @@
 
 .scroll-to-top{
   background-color: white;
-    right: 40px;
+    left: 20px;
     bottom: 40px;
     position: sticky !important;
     z-index: 10000;
     cursor: pointer;
-    border-radius: 7px;
     width: 40px;
     height: 40px;
     box-shadow: 0 9px 25px 0 rgba(132, 128, 177, 0.28);
     border: none;
+    border-radius: 50% !important;
+}
+
+/* carousel text optimization */
+@media (max-width: 768px) {
+  .carousel-caption h3 {
+      font-size: 16px; /* Reduce heading size */
+  }
+
+  .carousel-caption p {
+      font-size: 12px; /* Reduce paragraph size */
+  }
 }

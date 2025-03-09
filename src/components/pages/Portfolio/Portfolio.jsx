@@ -14,6 +14,7 @@ import { Row, Col, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import ScrollToTop from "react-scroll-to-top";
+import ogImage from "../../../assets/images/ogPortfolio.webp"
 
 // Project Data
 const commercialProjects = [
@@ -120,7 +121,7 @@ const Portfolio = () => {
       {/* Open Graph (Facebook & LinkedIn) */}
       <meta property="og:title" content="Portfolio | Kartik Interiors - Our Best Projects" />
       <meta property="og:description" content="Explore our stunning commercial and residential interior designs." />
-      <meta property="og:image" content="https://cdn.kartikinteriors15.com/portfolio-banner.webp" />
+      <meta property="og:image" content={ogImage} />
       <meta property="og:url" content="https://kartikinteriors15.com/portfolio" />
       <meta property="og:type" content="website" />
 
@@ -214,7 +215,7 @@ const Portfolio = () => {
       {/* Middle Section */}
       <section className="middle-section">
       <div className="text-content">
-  <h2>🏡 Transform Your Home with Timeless Elegance! ✨</h2>
+      <h2>🏡 Elevate Your Space! ✨</h2>
   <h3>Where Style Meets Comfort – Designed Just for You! 🎨</h3>
   <p>
     At <strong>Kartik Interiors</strong>, we craft more than just window blinds—we create experiences that redefine luxury and comfort. 🌟  

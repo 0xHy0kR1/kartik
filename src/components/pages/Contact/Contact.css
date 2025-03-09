@@ -188,3 +188,14 @@
     color: black;
     font-weight: bold;
 }
+
+[data-theme="dark"] .contact-link {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+[data-theme="light"] .contact-link {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}

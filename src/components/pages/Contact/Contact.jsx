@@ -18,6 +18,7 @@ import livingRoomInteriors from "../../../assets/videos/clip4.mp4";
 import bathroomInteriors from "../../../assets/videos/clip5.mp4";
 import "./Contact.css";
 import ScrollToTop from "react-scroll-to-top";
+import ogImage from "../../../assets/images/ogContactUs.webp"
 
 const ContactPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -56,7 +57,7 @@ const ContactPage = () => {
           property="og:description"
           content="Reach out to Kartik Interiors for the best home decor solutions. Free consultations available!"
         />
-        <meta property="og:image" content="https://i.postimg.cc/kXHBLSm8/images.webp" />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:url" content="https://kartikinteriors15.com/contact" />
         <meta property="og:type" content="website" />
 

@@ -87,12 +87,18 @@
     }
 }
 
+.footer-copy{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-.footer-bottom {
+.footer-copy {
     text-align: left;
     font-size: 0.9rem;
     padding: 10px 20px;
     border-top: 1px solid #444;
+    margin-right: 20px;
 }
 
 [data-theme="dark"] .footer {
@@ -119,4 +125,8 @@
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+
+.footer-whatsapp-floating{
+    padding: 4px;
 }

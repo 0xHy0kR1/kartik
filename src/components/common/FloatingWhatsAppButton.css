@@ -1,12 +1,13 @@
 
   
   .styles-module_whatsappButton__tVits {
-    bottom: 4em !important;
+    bottom: 0 !important;
+    position: sticky;
   }
 
-  .styles-module_whatsappChatBox__MdQ5U{
-    bottom: 23em !important;
-  }
+  /* .styles-module_whatsappChatBox__MdQ5U{
+    
+  } */
 
   .styles-module_floatingWhatsapp__yWF5K{
     text-align: -webkit-right !important;
